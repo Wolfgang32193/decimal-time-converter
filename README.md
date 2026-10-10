@@ -33,3 +33,10 @@ The trade-off: decimal values are rounded to 4 decimal places (a tenth of a seco
 - `normalizeClock(parts)` → `[h, m, s]` — validate and fill defaults; throws on out-of-range.
 - `roundDecimal(hours)` → `number` — round to 4 dp with epsilon fix-up.
 - `DecimalTimeError` — `Error` subclass thrown by all of the above on bad input.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
