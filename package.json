@@ -1,6 +1,6 @@
 {
   "name": "decimal-time-converter",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Converts between standard 24-hour sexagesimal time and decimal hours, useful for payroll and scientific time tracking.",
   "type": "module",
   "main": "src/index.js",
